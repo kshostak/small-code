@@ -9,24 +9,24 @@
     </style>
     <script>
     $(function() {
-  	var urlTpl = "list.html";
-	var urlData = "ajax.php";
-	$.ajax({
-		url: urlTpl,
-		dataType: "html",
-		success: function(data){
-			var template = data;
-			$.ajax({
-				url: urlData,
-				dataType: "json",
-				success: function(data){
-					console.log(data);
-					$.template("template", template);
-					$.tmpl("template", data).appendTo("#list");
-				}
-			});
-		}
-	});
+		var urlTpl = "list.html";
+		var urlData = "ajax.php";
+		$.ajax({
+			url: urlTpl,
+			dataType: "html",
+			success: function(data){
+				var template = data;
+				$.ajax({
+					url: urlData,
+					dataType: "json",
+					success: function(data){
+						console.log(data);
+						$.template("template", template);
+						$.tmpl("template", data).appendTo("#list");
+					}
+				});
+			}
+		});
     });
     </script>
 </head>
